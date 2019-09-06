@@ -1,9 +1,9 @@
 window.onload = function() {
   renderGiphyButtons();
-
-  // Event listener for all button elements
+};
+// Event listener for all button elements
+function registerGifClickEvent() {
   $(".gif").on("click", function() {
-    
     // In this case, the "this" keyword refers to the button that was clicked
     var person = $(this).attr("data-name");
     // Constructing a URL to search Giphy for the name of the person who said the quote
@@ -42,8 +42,8 @@ window.onload = function() {
         }
       });
   });
-  
-};
+}
+
 let gifs = ["office fail", "goats fail", "drunk fail", "sport fail", "babies fail"];
 // dynamically generate giphy button
 function renderGiphyButtons() {
@@ -55,13 +55,18 @@ function renderGiphyButtons() {
     giphyButton.text(gifs[i]);
     $("#buttons-view").append(giphyButton);
   }
+  registerGifClickEvent();
 }
 $("#add-giphy").on("click", function(event) {
   event.preventDefault();
-  // alert($("#giphy-input").val().trim());
-  var text = $("#giphy-input").val().trim();
+  var text = $("#giphy-input")
+    .val()
+    .trim();
+  if (!text) {
+    return;
+  }
+
   gifs.push(text);
-  console.log(gifs);
   renderGiphyButtons();
 });
 
