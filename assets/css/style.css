@@ -1,5 +1,5 @@
 body{
-  background-image: url(../images/cover-1.jpg);
+  background-image: url(assets/images/cover-1.jpg);
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -9,7 +9,7 @@ body{
 button {
   background-color: chocolate;
   color: white;
-  padding: 5px;
+  padding: 10px;
   font-size: 16px;
   border-radius: 30px;
 }
@@ -30,7 +30,10 @@ form{
   width: 600px;
   height: 400px;
 }
-.Image {
+.resultImage {
   width: 350px;
   height: 200px;
+}
+p{
+  color: green;
 }
